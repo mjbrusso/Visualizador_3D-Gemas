@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Project Name="Redondo10.stl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Schema">
+
+	<Model Name="Redondo10">
+
+		<MeasuresModel>
+
+			<Index>120</Index>					<!-- Valor do Index(64, 96, 120, etc) -->
+			<RI>1.54</RI>						<!-- Valor do Indice de Refracao (Quartzo=1,54) -->
+			<Facets>71</Facets>					<!-- Numero de facetas -->
+			<FacetsCintura>0</FacetsCintura>	<!-- Numero de facetas na cintura -->
+
+			<GirdleL1>10.0000</GirdleL1>		<!-- Parametro para calcular os demais valores (10 mm) -->
+			<GirdleL2>1.0000</GirdleL2>			<!-- 100% de L1 -->
+			
+			<TableM1>0.5758</TableM1>			<!-- 57,58% de L1 -->
+			<TableM2>0.5758</TableM2>			<!-- 57,58% de L1 -->
+			
+			<Crown>0.1182</Crown>				<!-- 11,82% de L1 -->
+			<Girdle>0.0200</Girdle>				<!--  2,00% de L1 -->
+			<Pavilion>0.4472</Pavilion>			<!-- 44,72% de L1 -->
+			<Total>0.5854</Total>				<!-- 58,54% de L1 -->
+
+			<Cut>	<!-- Posicao e angulo de corte de cada faceta do modelo-->
+				<Pavilion>
+					<index	vertice1 = " "		vertice2 = "90.0"	vertice3 = "Cintura Lisa" />
+
+					<index	vertice1 = "P1"		vertice2 = "42.5"	vertice3 = "03-09-15-21-27-33-39-45-51-57" />
+
+					<index	vertice1 = " "		vertice2 = " "		vertice3 = "63-69-75-81-87-93-99-105-111-117" />
+		
+					<index	vertice1 = "P2"		vertice2 = "41.5"	vertice3 = "120-12-24-36-48-60-72-84-96-108" />
+  				</Pavilion>
+
+				<Crown>
+					<index	vertice1 = "C1"		vertice2 = "34.0"	vertice3 = "03-09-15-21-27-33-39-45-51-57" />
+
+					<index	vertice1 = " "		vertice2 = " "		vertice3 = "63-69-75-81-87-93-99-105-111-117" />
+
+					<index	vertice1 = "C2"		vertice2 = "30.0"	vertice3 = "120-12-24-36-48-60-72-84-96-108" />
+
+					<index	vertice1 = "C3"		vertice2 = "20.0"	vertice3 = "06-18-30-42-54-66-78-90-102-114" />
+		
+					<index	vertice1 = "C4"		vertice2 = "0"		vertice3 = "Mesa" />
+				</Crown>
+			</Cut>
+
+		</MeasuresModel>
+
+		<MeasuresPreform>
+
+			<AngleCrown>36.0</AngleCrown>			<!-- Angulo da coroa na pre-forma -->
+			<AnglePavilion>45.0</AnglePavilion>		<!-- Angulo do pavilhao na pre-forma-->
+			<Pavilion>0.4479</Pavilion>				<!-- 44,79% de L1 -->
+			<Crown>0.1182</Crown>					<!-- 11,82% de L1 -->
+
+		</MeasuresPreform>
+
+	</Model>
+
+</Project>

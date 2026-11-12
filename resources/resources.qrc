@@ -1,0 +1,36 @@
+<RCC>
+    <qresource prefix="/">
+        <file>../Imagens/CADGem.jpg</file>
+        <file>../Imagens/cnpq.png</file>
+        <file>../Imagens/ctp.png</file>
+        <file>../Imagens/Diagram/Logo.png</file>
+        <file>../Imagens/Diagram/Quadro.png</file>
+        <file>../Imagens/Diagram/Quadro_preforma.png</file>
+        <file>../Imagens/finep.png</file>
+        <file>../Imagens/Icones/CADGem.jpg</file>
+        <file>../Imagens/Icones/close.png</file>
+        <file>../Imagens/Icones/Cor_gema.png</file>
+        <file>../Imagens/Icones/Cor_modelo.png</file>
+        <file>../Imagens/Icones/Cor_modelo1.png</file>
+        <file>../Imagens/Icones/Cor_preforma.png</file>
+        <file>../Imagens/Icones/eixos.png</file>
+        <file>../Imagens/Icones/icone_pdf.png</file>
+        <file>../Imagens/Icones/new.png</file>
+        <file>../Imagens/Icones/open.png</file>
+        <file>../Imagens/Icones/point.png</file>
+        <file>../Imagens/Icones/print.png</file>
+        <file>../Imagens/Icones/sair.png</file>
+        <file>../Imagens/Icones/save.png</file>
+        <file>../Imagens/Icones/solid.png</file>
+        <file>../Imagens/Icones/solid_wire.png</file>
+        <file>../Imagens/Icones/Splash.png</file>
+        <file>../Imagens/Icones/wireframe.png</file>
+        <file>../Imagens/Icones/zoom_in.png</file>
+        <file>../Imagens/Icones/zoom_out.png</file>
+        <file>../Imagens/MCT.png</file>
+        <file>../Imagens/mct.png</file>
+        <file>../Imagens/sebrae.png</file>
+        <file>../Imagens/ufrgs.png</file>
+        <file>../Imagens/upf.png</file>
+    </qresource>
+</RCC>

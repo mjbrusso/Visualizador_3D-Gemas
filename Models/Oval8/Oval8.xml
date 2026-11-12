@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Project Name="Oval8.stl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Schema">
+
+	<Model Name="Oval8">
+
+		<MeasuresModel>
+
+			<Index>96</Index>					<!-- Valor do Index(64, 96, 120, etc) -->
+			<RI>1.54</RI>						<!-- Valor do Indice de Refracao (Quartzo=1,54) -->
+			<Facets>55</Facets>					<!-- Numero de facetas -->
+			<FacetsCintura>0</FacetsCintura>	<!-- Numero de facetas na cintura -->
+
+			<GirdleL1>10.0000</GirdleL1>		<!-- Parametro para calcular os demais valores (10 mm) -->	
+			<GirdleL2>1.2430</GirdleL2>			<!-- 124,3% de L1 -->
+			
+			<TableM1>0.5821</TableM1>			<!-- 58,21% de L1 -->
+			<TableM2>0.7126</TableM2>			<!-- 71,26% de L1 -->
+			
+			<Crown>0.1399</Crown>				<!-- 13,99% de L1 -->
+			<Girdle>0.0200</Girdle>				<!--  2,00% de L1 -->
+			<Pavilion>0.4940</Pavilion>			<!-- 49,40% de L1 -->
+			<Total>0.6530</Total>				<!-- 65,39% de L1 -->
+
+			<Cut>	<!-- Posicao e angulo de corte de cada faceta do modelo-->
+				<Pavilion>
+					<index	vertice1 = " "		vertice2 = "90.0"	vertice3 = "Cintura Lisa" />
+
+					<index	vertice1 = "P1"		vertice2 = "46.0"	vertice3 = "02-46-50-94" />
+
+					<index	vertice1 = "P2"		vertice2 = "45.0"	vertice3 = "08-40-56-88" />
+		
+					<index	vertice1 = "P3"		vertice2 = "42.0"	vertice3 = "13-35-61-83" />
+
+					<index	vertice1 = "P4"		vertice2 = "41.2"	vertice3 = "20-28-68-76" />
+
+					<index	vertice1 = "P5"		vertice2 = "44.5"	vertice3 = "96-48" />
+
+					<index	vertice1 = "P6"		vertice2 = "41.7"	vertice3 = "12-36-60-84" />
+  				</Pavilion>
+
+				<Crown>
+					<index	vertice1 = "C1"		vertice2 = "38.5"	vertice3 = "02-46-50-94" />
+
+					<index	vertice1 = "C2"		vertice2 = "36.2"	vertice3 = "08-40-56-88" />
+
+					<index	vertice1 = "C3"		vertice2 = "36.5"	vertice3 = "13-35-61-83" />
+
+					<index	vertice1 = "C4"		vertice2 = "33.2"	vertice3 = "20-28-68-76" />
+
+					<index	vertice1 = "C5"		vertice2 = "32.7"	vertice3 = "96-48" />
+
+					<index	vertice1 = "C6"		vertice2 = "30.1"	vertice3 = "10-38-58-86" />
+
+					<index	vertice1 = "C7"		vertice2 = "24.8"	vertice3 = "24-72" />
+
+					<index	vertice1 = "C8"		vertice2 = "21.4"	vertice3 = "05-43-53-91" />
+
+					<index	vertice1 = "C9"		vertice2 = "18.4"	vertice3 = "17-31-65-79" />
+		
+					<index	vertice1 = "C10"	vertice2 = "0"		vertice3 = "Mesa" />
+				</Crown>
+			</Cut>
+
+		</MeasuresModel>
+
+		<MeasuresPreform>
+
+			<AngleCrown>41.0</AngleCrown>			<!-- Angulo da coroa na pre-forma -->
+			<AnglePavilion>48.0</AnglePavilion>		<!-- Angulo do pavilhao na pre-forma-->
+			<Pavilion>0.4940</Pavilion>				<!-- 49,40% de L1 -->
+			<Crown>0.1399</Crown>					<!-- 13,99% de L1 -->
+
+		</MeasuresPreform>
+
+	</Model>
+
+</Project>
