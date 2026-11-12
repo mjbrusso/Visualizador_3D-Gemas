@@ -1,6 +1,6 @@
 # Visualizador 3D-Gemas
 
-Repositório **não oficial** do Visualizador 3D-Gemas, software desenvolvido como parte integrante do projeto **3D-Gemas**, uma parceria entre a Universidade de Passo Fundo (UPF) e a Universidade Federal do Rio Grande do Sul (UFRGS).
+Repositório **não oficial** do Visualizador 3D-Gemas, software desenvolvido como parte integrante do projeto **3D-Gemas**, uma parceria entre a Universidade de Passo Fundo (UPF) e a Universidade Federal do Rio Grande do Sul (UFRGS). Este fork foi atualizado para Qt 6, com algumas melhorias na interface de usuário.
 
 > **Nota:** este README foi gerado por inteligência artificial com base na estrutura deste repositório e no artigo relacionado citado abaixo. Revise as informações antes de utilizá-las como documentação oficial.
 
@@ -121,7 +121,6 @@ Os projetos e modelos são dados de entrada do Visualizador:
 
 Os diretórios `Gem/`, `Models/` e `translations/` são copiados para a saída de build quando existem na origem. A compilação do programa não garante que todos os dados de modelos referenciados pelos projetos estejam presentes.
 
-> **Atenção:** no conteúdo atualmente disponível neste repositório, há projetos XML em `Gem/`, mas o diretório `Models/` não contém os arquivos de modelos. Para abrir um projeto com seus modelos ou gerar o diagrama completo, forneça os arquivos correspondentes no formato e na estrutura esperados acima.
 
 ## Estrutura do código
 
