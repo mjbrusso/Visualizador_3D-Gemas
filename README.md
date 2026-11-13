@@ -18,7 +18,7 @@ O artigo abaixo descreve a geração de diagramas de execução para orientar o 
 
 - Abrir projetos de gemas em XML.
 - Visualizar a malha 3D da gema e os modelos de lapidação e pré-formas associados.
-- Alternar entre a visualização da pré-forma, do modelo de lapidação ou de ambos.
+- Controlar independentemente a visualização da gema, da pré-forma e do modelo de lapidação.
 - Selecionar modelos disponíveis no projeto e manipular a visualização, incluindo zoom, cores, transparência, eixos e modos sólido, aramado ou combinado.
 - Gerar um diagrama de lapidação em PDF para o projeto carregado.
 - Usar a interface traduzida conforme os arquivos de tradução disponíveis e a localidade do sistema.
@@ -109,7 +109,7 @@ Também é possível passar o caminho de um projeto XML como argumento. Use um c
 ./build/debug/Visualizador_3D-Gemas "$PWD/Gem/Gema1.xml"
 ```
 
-Na interface, use **Arquivo → Abrir Gema** para selecionar um XML. Depois de carregar o projeto, selecione um modelo na lista e escolha se deseja visualizar a pré-forma, o modelo de lapidação ou ambos. Para gerar o diagrama, use **Arquivo → Gerar Diagrama** e escolha onde salvar o PDF.
+Na interface, use **Arquivo → Abrir Gema** para selecionar um XML. Depois de carregar o projeto, selecione um modelo na lista e marque as caixas da gema, pré-forma e modelo de lapidação conforme deseja exibi-los. Para gerar o diagrama, use **Arquivo → Gerar Diagrama** e escolha onde salvar o PDF.
 
 ## Arquivos de dados
 

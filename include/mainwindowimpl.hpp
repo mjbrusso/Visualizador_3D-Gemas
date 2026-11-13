@@ -133,10 +133,10 @@ private slots:
     void on_actionAboutQT_triggered();
     void on_actionColorGem_triggered();
     void on_actionColorPreshape_triggered();
-    void on_radioBtnPreForma_clicked();
-    void on_radioBtnModelo_clicked();
+    void on_checkBoxGema_clicked();
+    void on_checkBoxPreForma_clicked();
+    void on_checkBoxModelo_clicked();
     void on_actionColorModelo_triggered();
-    void on_radioBtnPM_clicked();
     void on_actionAboutVisaulizador_triggered();
     void on_actionZoomMenos_triggered();
     void on_actionFechar_Gema_triggered();

@@ -85,9 +85,9 @@ MainWindowImpl::MainWindowImpl(QWidget* parent, Qt::WindowFlags f)
     camera4->setChangeAxis(false);
 
     open = false;
-    radioBtnPreForma->setChecked(true);
-    radioBtnModelo->setChecked(false);
-    radioBtnPM->setChecked(false);
+    checkBoxGema->setChecked(true);
+    checkBoxPreForma->setChecked(true);
+    checkBoxModelo->setChecked(false);
     EnableComponent(false);
 }
 
@@ -135,9 +135,9 @@ void MainWindowImpl::chooseFile(QString filter)
         setAngleStoneInicial();
 
         EnableComponent(false);
-        radioBtnPreForma->setChecked(true);
-        radioBtnModelo->setChecked(false);
-        radioBtnPM->setChecked(false);
+        checkBoxGema->setChecked(true);
+        checkBoxPreForma->setChecked(true);
+        checkBoxModelo->setChecked(false);
         sliderAlpha->setValue(50);
         windowGL->setObject3D(true);
 
@@ -243,9 +243,9 @@ void MainWindowImpl::loadXml(QString path)
         stone.setVisible(true);
         preShape.setVisible(true);
         model.setVisible(true);
-        radioBtnPreForma->setChecked(true);
-        radioBtnModelo->setChecked(false);
-        radioBtnPM->setChecked(false);
+        checkBoxGema->setChecked(true);
+        checkBoxPreForma->setChecked(true);
+        checkBoxModelo->setChecked(false);
         trocarObjeto();
 
         // aponta child para o filho da Gema-> Models -> ModelType
@@ -319,9 +319,9 @@ void MainWindowImpl::loadXml(QString path)
     actionSolid->setChecked(true); // selecina botão do sólido
     getPositionStoneInicial(); // guarda a posição (dimension) inicial da Gema(Stone);
     getAngleStoneInicial(); // guarda os angulos iniciais da gema
-    radioBtnPreForma->setChecked(true);
-    radioBtnModelo->setChecked(false);
-    radioBtnPM->setChecked(false);
+    checkBoxGema->setChecked(true);
+    checkBoxPreForma->setChecked(true);
+    checkBoxModelo->setChecked(false);
     trocarObjeto();
     updateCam();
 
@@ -567,7 +567,9 @@ void MainWindowImpl::on_actionRestaurar_triggered()
         it->setColor(QColor::fromRgbF(0.6, 0.6, 0.0, 1.0));
     model = modeloLap[index];
     //--------------------------------------------------------------------------------------------
-    radioBtnPreForma->click();
+    checkBoxPreForma->setChecked(true);
+    checkBoxModelo->setChecked(false);
+    trocarObjeto();
 }
 
 void MainWindowImpl::on_actionMostrar_Eixos_triggered()
@@ -675,11 +677,12 @@ QString MainWindowImpl::getDiagramSaveFilePath(bool& openAfterSave)
 
 void MainWindowImpl::on_geraDiagrama_triggered()
 {
-    if (!radioBtnPreForma->isChecked()) {
+    if (!checkBoxPreForma->isChecked() || checkBoxModelo->isChecked()) {
         int resposta;
-        resposta = QMessageBox::question(this, tr("Visualizador 3D-Gemas"), tr("Para gerar o Diagrama de Lapidação, primeiro deve ser selecionada a opção Pre-forma. Você deseja selecionar a opção Pre-forma?"), QMessageBox::Yes | QMessageBox::No);
+        resposta = QMessageBox::question(this, tr("Visualizador 3D-Gemas"), tr("Para gerar o Diagrama de Lapidação, deve ser exibida somente a pré-forma. Deseja selecionar somente a pré-forma?"), QMessageBox::Yes | QMessageBox::No);
         if (resposta == QMessageBox::Yes) {
-            radioBtnPreForma->setChecked(true);
+            checkBoxPreForma->setChecked(true);
+            checkBoxModelo->setChecked(false);
             trocarObjeto();
             on_geraDiagrama_triggered();
         } else
@@ -775,58 +778,53 @@ void MainWindowImpl::on_actionColorModelo_triggered()
     updateCam();
 }
 
-void MainWindowImpl::on_radioBtnPreForma_clicked()
+void MainWindowImpl::on_checkBoxPreForma_clicked()
 {
-    radioBtnModelo->setChecked(false);
-    radioBtnPM->setChecked(false);
     model.setTypePreview(solid);
     trocarObjeto();
 }
 
-void MainWindowImpl::on_radioBtnModelo_clicked()
+void MainWindowImpl::on_checkBoxGema_clicked()
 {
-    radioBtnPreForma->setChecked(false);
-    radioBtnPM->setChecked(false);
     model.setTypePreview(solid);
     trocarObjeto();
 }
 
-void MainWindowImpl::on_radioBtnPM_clicked()
+void MainWindowImpl::on_checkBoxModelo_clicked()
 {
-    radioBtnPreForma->setChecked(false);
-    radioBtnModelo->setChecked(false);
     model.setTypePreview(solid);
     trocarObjeto();
 }
 
 void MainWindowImpl::trocarObjeto()
 {
-    stone.setVisible(true);
+    const bool showGem = checkBoxGema->isChecked();
+    stone.setVisible(showGem);
     stone.setTypePreview(solid);
 
-    if (radioBtnPreForma->isChecked()) {
-        lblVisaoPrincipal->setText(tr("Pré-Forma - ") + modelo);
-        lblOutrasVisoes->setText(tr("Pré-Forma - ") + modelo);
-        model.setVisible(false);
-        preShape.setVisible(true);
-        actionColorPreshape->setEnabled(true);
-        actionColorModelo->setEnabled(false);
+    const bool showPreShape = checkBoxPreForma->isChecked();
+    const bool showModel = checkBoxModelo->isChecked();
+    preShape.setVisible(showPreShape);
+    model.setVisible(showModel);
+    actionColorPreshape->setEnabled(showPreShape);
+    actionColorGem->setEnabled(showGem);
+    actionColorModelo->setEnabled(showModel);
 
-    } else if (radioBtnModelo->isChecked()) {
-        lblVisaoPrincipal->setText(tr("Modelo de Lapidação - ") + modelo);
-        lblOutrasVisoes->setText(tr("Modelo de Lapidação - ") + modelo);
-        model.setVisible(true);
-        preShape.setVisible(false);
-        actionColorPreshape->setEnabled(false);
-        actionColorModelo->setEnabled(true);
-    } else if (radioBtnPM->isChecked()) {
+    if (showPreShape && showModel) {
         lblVisaoPrincipal->setText(tr("Pré-Forma e Modelo de Lapidação - ") + modelo);
         lblOutrasVisoes->setText(tr("Pré-Forma e Modelo de Lapidação - ") + modelo);
-        model.setVisible(true);
-        preShape.setVisible(true);
-        actionColorPreshape->setEnabled(true);
-        actionColorGem->setEnabled(true);
-        actionColorModelo->setEnabled(true);
+    } else if (showPreShape) {
+        lblVisaoPrincipal->setText(tr("Pré-Forma - ") + modelo);
+        lblOutrasVisoes->setText(tr("Pré-Forma - ") + modelo);
+    } else if (showModel) {
+        lblVisaoPrincipal->setText(tr("Modelo de Lapidação - ") + modelo);
+        lblOutrasVisoes->setText(tr("Modelo de Lapidação - ") + modelo);
+    } else if (showGem) {
+        lblVisaoPrincipal->setText(tr("Somente gema - ") + modelo);
+        lblOutrasVisoes->setText(tr("Somente gema - ") + modelo);
+    } else {
+        lblVisaoPrincipal->setText(tr("Nenhum objeto - ") + modelo);
+        lblOutrasVisoes->setText(tr("Nenhum objeto - ") + modelo);
     }
 
     updateCam();
